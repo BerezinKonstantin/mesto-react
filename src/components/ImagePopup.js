@@ -11,14 +11,16 @@ function ImagePopup(props) {
   }
   return (
     <section className={`popup popup_for_image ${popupOpened}`}>
-      <div className="popup__img-wrapper">
-        <img className="popup__image" src={srcLink} alt="Фото места" />
-        <p className="popup__img-title">{cardName}</p>
-        <button
-          className="popup__close-button"
-          onClick={props.onClose}
-        ></button>
-      </div>
+      {popupOpened && (
+        <div className="popup__img-wrapper">
+          <img className="popup__image" src={srcLink} alt="Фото места" />
+          <p className="popup__img-title">{cardName}</p>
+          <button
+            className="popup__close-button"
+            onClick={props.onClose}
+          ></button>
+        </div>
+      )}
     </section>
   );
 }
